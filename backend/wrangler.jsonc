@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "medium-backend",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-08-21",
+  "vars": {
+    "JWT_SECRET": ""
+  },
+
+  // If you need node compatibility uncomment this
+  // "compatibility_flags": ["nodejs_compat"]
+}
