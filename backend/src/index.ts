@@ -5,6 +5,7 @@ import { PrismaClient } from '@prisma/client/edge'
 import { withAccelerate } from '@prisma/extension-accelerate'
 import { sign, verify } from 'hono/jwt'
 import z from 'zod';
+import { cors } from 'hono/cors'
 
 export const app = new Hono<{
   Bindings: {
@@ -13,6 +14,7 @@ export const app = new Hono<{
   }
 }>();
 
+app.use('/*', cors())
 app.route("/api/v1/user", userRouter);
 app.route("/api/v1/blog", blogRouter);
 
